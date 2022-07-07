@@ -19,7 +19,10 @@ export default class Wppconnect {
         try {
             const client = await wppconnect.create({
                 session: session,
-                tokenStore: 'memory',
+                tokenStore: 'file',
+		puppeteerOptions:{
+		    userDataDir: './tokens/'+session+'',
+		},
                 catchQR: (base64Qrimg, ascii) => {
                     webhooks.wh_qrcode(session, base64Qrimg)
                     this.exportQR(req, res, base64Qrimg, session);

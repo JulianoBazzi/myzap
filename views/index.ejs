@@ -204,12 +204,11 @@
     <script src="/js/socket.io.js"></script>
 
     <script>
-        let url;
-        let host = '<%=host %>'
+	let host = '<%=host %>'
         let host_ssl = '<%=host_ssl %>'
         let port = '<%=port %>'
-        url = host_ssl == '' ? `${host}:${port}` : host_ssl
-        
+        let url = host_ssl == '' ? `${host}:${port}` : ''       
+
         document.getElementById('image').style.visibility = "hidden";
 
         async function getSession(session) {
@@ -227,12 +226,14 @@
                 wh_qrcode: document.getElementById("wh_qrcode").value,
                 wh_connect: document.getElementById("wh_connect").value,
             }
-            axios.post(url + "/start", data, config)
+            
+            
+	    axios.post(url + "/start", data, config)
                 .then((value) => {
                     //alert(value)
                 })
                 .catch((err) => {
-                    //alert(err)
+                    alert(err)
                 })
 
         }
