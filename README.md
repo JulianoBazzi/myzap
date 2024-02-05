@@ -90,11 +90,14 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 ### Para instalar o nodejs 18
 
 ```bash
-cd ~
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+```bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+```
+```bash
 nvm install 18 --lts
 node -v
 ```
