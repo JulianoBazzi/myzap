@@ -131,7 +131,7 @@ yarn start
 ### Manter os processos ativos a cada reinicialização do servidor
 
 ```bash
-yarn install -y pm2 -g
+npm install -y pm2 -g
 pm2 start index.js --name myzap
 pm2 startup
 ```
