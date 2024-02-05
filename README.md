@@ -87,22 +87,32 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
 
-### Para instalar o nodejs 16
+### Para instalar o nodejs 18
 
 ```bash
 cd ~
-curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt -y install nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install 18 --lts
 node -v
 ```
+
+
+### Instalar o Yarn
+
+```bash
+npm install --global yarn
+```
+
 
 ### Clonar do GIT
 
 ```bash
 git clone https://github.com/billbarsch/myzap
 cd myzap
-npm install --allow-root --unsafe-perm=true
+yarn install --allow-root --unsafe-perm=true
 cp .env_exemplo .env
 ```
 
@@ -112,13 +122,13 @@ cp .env_exemplo .env
 ### Iniciar o Servidor
 
 ```bash
-npm start
+yarn start
 ```
 
 ### Manter os processos ativos a cada reinicialização do servidor
 
 ```bash
-npm install -y pm2 -g
+yarn install -y pm2 -g
 pm2 start index.js --name myzap
 pm2 startup
 ```
