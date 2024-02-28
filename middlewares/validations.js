@@ -25,7 +25,8 @@ const checkParams = async (req, res, next) => {
     else if (data.sessionkey != req.headers['sessionkey']) {
         return res.status(401).json({
             "result": 401,
-            "messages": "Não autorizado, verifique se o nome da sessão e o sessionkey estão corretos"
+            "messages": "Não autorizado, verifique se o nome da sessão e o sessionkey estão corretos",
+            "data": data
         })
     }
     else {
