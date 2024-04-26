@@ -250,7 +250,7 @@ export default class Commands {
     let data = Sessions.getSession(req.body.session)
     try {
       let number = req.body.number + '@c.us';
-      let profile = await data.client.getNumberProfile(number)
+      let profile = await data.client.checkNumberStatus(number)
       if (profile.numberExists) {
         return res.status(200).json({
           "result": 200,
