@@ -70,8 +70,11 @@ https://youtu.be/sTMtev62vUE
 
 https://youtu.be/puM4BzLaNoQ
 
-### Instalação Básica - VPS UBUNTU/DEBIAN:
+### Instalação básica (Ubuntu 22.04 LTS)
 
+```bash
+sudo apt update
+```
 ```bash
 sudo apt install -y curl nano git gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 \
 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 \
@@ -80,14 +83,17 @@ libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-r
 build-essential apt-transport-https libgbm-dev
 ```
 
-### Para instalar o ChomeDrive
+### Para instalar o Google Chrome ou Chromium
 
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
+```bash
+sudo apt install chromium-browser
+```
 
-### Para instalar o nodejs 18
+### Para instalar o NodeJS 18
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -100,6 +106,7 @@ export NVM_DIR="$HOME/.nvm"
 ```bash
 nvm install 18 --lts
 node -v
+export NODE_OPTIONS=--max-old-space-size=1024
 ```
 
 
@@ -107,6 +114,8 @@ node -v
 
 ```bash
 npm install --global yarn
+npm install --os=linux --cpu=arm64 sharp
+yarn config set network-timeout 600000 -g
 ```
 
 
