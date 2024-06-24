@@ -114,7 +114,7 @@ export NODE_OPTIONS=--max-old-space-size=1024
 
 ```bash
 npm install --global yarn
-npm install --os=linux --cpu=arm64 sharp
+npm install --os=linux --cpu=x64 sharp
 yarn config set network-timeout 600000 -g
 ```
 
