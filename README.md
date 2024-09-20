@@ -83,20 +83,17 @@ libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-r
 build-essential apt-transport-https libgbm-dev
 ```
 
-### Para instalar o Google Chrome ou Chromium
+### Para instalar o Google Chrome
 
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
-```bash
-sudo apt install chromium-browser
-```
 
 ### Para instalar o NodeJS 18
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
 ```bash
 export NVM_DIR="$HOME/.nvm"
